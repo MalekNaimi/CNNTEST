@@ -24,7 +24,7 @@ def load_data(in_dir):
 def test(model_path):
     train_data, train_label, test_data, test_label, valid_data, valid_label, Valid_label, Test_label, pernums_test, pernums_valid = load_data('/content/drive/MyDrive/IEMOCAP.pkl')
     test_label = test_label.reshape(-1)
-    model=load_model(model_path)
+    model=torch.load(model_path)
     result=model.predict(test_data)
     
     
